@@ -39,11 +39,6 @@ Populate starting data
 php artisan db:seed
 ```
 
-Run the tests
-```
-php artisan test
-```
-
 ## Finally
 Depending on your preference you can either set up a virtual host pointing to the public folder as your entry point or run with artisan using the following command
 

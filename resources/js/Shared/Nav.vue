@@ -2,7 +2,6 @@
     <div class="bg-blue-500 space-x-4 px-2 py-4 mb-2">
         <Link href="/" class="hover:text-white">Home</Link>
         <Link href="/create" class="hover:text-white">Add</Link>
-        <Link href="/update" class="hover:text-white">Edit</Link>
     </div>
 </template>
 

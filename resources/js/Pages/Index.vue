@@ -1,4 +1,6 @@
 <template>
+    <Nav />
+
     <div class="contain flex flex-col items-center">
         <h1 class="text-4xl spacing-y-2">Wallys Widgets</h1>
 
@@ -22,10 +24,14 @@
 <script>
     import { reactive } from 'vue'
     import { Inertia } from '@inertiajs/inertia'
+    import Nav from '../Shared/Nav.vue'
 
     export default {
         props: {
             widgets: Array
+        },
+        components: {
+            Nav
         },
         setup () {
             const form = reactive({

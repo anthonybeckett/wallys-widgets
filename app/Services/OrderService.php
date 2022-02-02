@@ -1,6 +1,7 @@
 <?php
 namespace App\Services;
 
+use App\Models\Order;
 use App\Models\Widget;
 
 class OrderService
@@ -38,10 +39,19 @@ class OrderService
         return $results;
     }
 
+    public function saveOrder($data)
+    {
+        return Order::create([
+            'data' => json_encode($data)
+        ]);
+    }
+
     public function process($qty)
     {
         $quantities = Widget::all()->pluck('qty')->toArray();
 
-        dd($this->calculatePacks($quantities, $qty));
+        $results = $this->calculatePacks($quantities, $qty);
+
+        return $this->saveOrder($results);
     }
 }

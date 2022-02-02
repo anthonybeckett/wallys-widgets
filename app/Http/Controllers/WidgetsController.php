@@ -1,15 +1,15 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Http\Requests\WidgetStoreRequest;
 use App\Models\Widget;
-use Illuminate\Http\Request;
 
 class WidgetsController extends Controller
 {
     public function index()
     {
         return inertia('Index', [
-            'widgets' => Widget::all()
+            'widgets' => Widget::orderBy('qty')->get()
         ]);
     }
 
@@ -18,7 +18,12 @@ class WidgetsController extends Controller
         return inertia('Create');
     }
 
-    public function store(Request $request)
+    public function store(WidgetStoreRequest $request)
     {
+        Widget::create([
+            'qty' => $request->qty
+        ]);
+
+        return redirect('/');
     }
 }

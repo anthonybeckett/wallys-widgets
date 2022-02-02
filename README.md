@@ -34,6 +34,11 @@ Migrate the database
 php artisan migrate
 ```
 
+Populate starting data
+```
+php artisan db:seed
+```
+
 Run the tests
 ```
 php artisan test

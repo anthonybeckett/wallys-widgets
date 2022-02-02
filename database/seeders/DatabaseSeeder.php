@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -13,6 +12,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $values = [250, 500, 1000, 2000, 5000];
+
+        foreach ($values as $value) {
+            \App\Models\Widget::create([
+                'qty' => $value
+            ]);
+        }
     }
 }

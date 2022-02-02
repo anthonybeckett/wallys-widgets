@@ -3,7 +3,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class PagesTest extends TestCase
+class HomePageTest extends TestCase
 {
     /**
      * A basic feature test example.
@@ -13,13 +13,6 @@ class PagesTest extends TestCase
     public function test_userCanHitHomepage()
     {
         $response = $this->get('/');
-
-        $response->assertStatus(200);
-    }
-
-    public function test_userCanHitCreatePage()
-    {
-        $response = $this->get('/create');
 
         $response->assertStatus(200);
     }
